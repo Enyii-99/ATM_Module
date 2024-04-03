@@ -7,7 +7,7 @@ def print_with_delay(text, delay=0.1):
         time.sleep(delay)
 
 def print_menu():
-    print_with_delay("Please choose from the following options...")
+    print("Please choose from the following options...")
     print("1. Deposit")
     print("2. Withdraw")
     print("3. Show Balance")
@@ -18,7 +18,7 @@ def deposit(cardHolder):
     try:
       deposit = float(input("How much $$ would you like to deposit: "))
       cardHolder.set_balance(cardHolder.get_balance() + deposit)
-      print_with_delay("Thank you for your deposit. Your new balance is: ", str(cardHolder.get_balance()))
+      print("Thank you for your deposit. Your new balance is: ", str(cardHolder.get_balance()))
     except:
         print("Invalid Input")   
 
@@ -29,7 +29,7 @@ def withdraw(cardHolder):
             print("Insufficient Funds.")
         else:
             cardHolder.set_balance(cardHolder.get_balance() - withdraw)
-            print_with_delay("Thank you for banking with us!")    
+            print("Thank you for banking with us!")    
     except:
         print("Invalid Input.")
 
@@ -40,7 +40,7 @@ if __name__ == "__main__":
     current_user = cardHolder("", "", "", "", "")
     ### Created user repo
     list_of_cardHolders = []
-    list_of_cardHolders.append(cardHolder("12097648795432108", 0099, "Jane", "Rose", 2654000.75)) 
+    list_of_cardHolders.append(cardHolder("12097648795432108", 1099, "Jane", "Rose", 2654000.75)) 
     list_of_cardHolders.append(cardHolder("28765490987878765", 1279, "Mark", "Nonso", 657200.5)) 
     list_of_cardHolders.append(cardHolder("87978766906453234", 2445, "Obiora", "Nnaemeka", 89706580000.00)) 
     list_of_cardHolders.append(cardHolder("90876542321127865", 6856, "Enyichukwu", "Ochokwu", 980769000.95)) 
@@ -90,4 +90,4 @@ while (True):
     else:
         option == 0            
 
-print_with_delay("Thank you for banking with us.\n Have a nice day.")                  
+print_with_delay("Thank you for banking with us.\nHave a nice day.")                  
