@@ -1,7 +1,13 @@
+import time
 from cardHolder import cardHolder
 
+def print_with_delay(text, delay=0.1):
+    for letter in text:
+        print(Letter, end= "", flush=True)
+        time.sleep(delay)
+
 def print_menu():
-    print("Please choose from the following options...")
+    print_with_delay("Please choose from the following options...")
     print("1. Deposit")
     print("2. Withdraw")
     print("3. Show Balance")
@@ -12,7 +18,7 @@ def deposit(cardHolder):
     try:
       deposit = float(input("How much $$ would you like to deposit: "))
       cardHolder.set_balance(cardHolder.get_balance() + deposit)
-      print("Thank you for your deposit. Your new balance is: ", str(cardHolder.get_balance()))
+      print_with_delay("Thank you for your deposit. Your new balance is: ", str(cardHolder.get_balance()))
     except:
         print("Invalid Input")   
 
@@ -23,7 +29,7 @@ def withdraw(cardHolder):
             print("Insufficient Funds.")
         else:
             cardHolder.set_balance(cardHolder.get_balance() - withdraw)
-            print("Thank you for banking with us!")    
+            print_with_delay("Thank you for banking with us!")    
     except:
         print("Invalid Input.")
 
@@ -34,11 +40,11 @@ if __name__ == "__main__":
     current_user = cardHolder("", "", "", "", "")
     ### Created user repo
     list_of_cardHolders = []
-    list_of_cardHolders.append(cardHolder("12097648795432108", 3069, "Jane", "Ochokwu", 2654000.75)) 
+    list_of_cardHolders.append(cardHolder("12097648795432108", 0099, "Jane", "Rose", 2654000.75)) 
     list_of_cardHolders.append(cardHolder("28765490987878765", 1279, "Mark", "Nonso", 657200.5)) 
-    list_of_cardHolders.append(cardHolder("87978766906453234", 2225, "Obiora", "Ochokwu", 89706580000.00)) 
-    list_of_cardHolders.append(cardHolder("90876542321127865", 6969, "Enyichukwu", "Ochokwu", 980769000.95)) 
-    list_of_cardHolders.append(cardHolder("77876549980654674", 8903, "Segun", "Imah", 92249850000.78)) 
+    list_of_cardHolders.append(cardHolder("87978766906453234", 2445, "Obiora", "Nnaemeka", 89706580000.00)) 
+    list_of_cardHolders.append(cardHolder("90876542321127865", 6856, "Enyichukwu", "Ochokwu", 980769000.95)) 
+    list_of_cardHolders.append(cardHolder("77876549980654674", 8903, "Segun", "Sam", 92249850000.78)) 
 
     debitCardNum = ""
     while True:
@@ -84,4 +90,4 @@ while (True):
     else:
         option == 0            
 
-print("Thank you for banking with us.\n Have a nice day.")                  
+print_with_delay("Thank you for banking with us.\n Have a nice day.")                  
