@@ -7,8 +7,8 @@ def print_with_delay(text, delay=0.1):
         time.sleep(delay)
 
 def print_menu():
-    print("Please choose from the following options...")
-    print("1. Deposit")
+    print_with_delay("Please choose from the following options...")
+    print("\n1. Deposit")
     print("2. Withdraw")
     print("3. Show Balance")
     print("4. Exit")
@@ -29,7 +29,7 @@ def withdraw(cardHolder):
             print("Insufficient Funds.")
         else:
             cardHolder.set_balance(cardHolder.get_balance() - withdraw)
-            print("Thank you for banking with us!")    
+            print("Thank you for banking with us. Your new balance is: ", str(cardHolder.get_balance()))    
     except:
         print("Invalid Input.")
 
