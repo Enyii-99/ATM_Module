@@ -3,7 +3,7 @@ from cardHolder import cardHolder
 
 def print_with_delay(text, delay=0.1):
     for letter in text:
-        print(Letter, end= "", flush=True)
+        print(letter, end= "", flush=True)
         time.sleep(delay)
 
 def print_menu():
